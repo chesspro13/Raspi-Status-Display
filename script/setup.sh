@@ -28,7 +28,7 @@ echo
 
 echo ++     Installing basic python dependencies
 sudo python3 -m venv .venv
-sudo -H .venv/bin/pip install -r requirements.txt
+sudo -H .venv/bin/pip3 install -r requirements.txt
 echo
 
 echo ++     Installing system services
