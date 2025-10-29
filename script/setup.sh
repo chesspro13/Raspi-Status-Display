@@ -1,5 +1,7 @@
 #!/bin/bash
 
+REPOSITORY="chesspro13"
+
 echo ++    I2C Checks
 if [ $(sudo raspi-config nonint get_i2c) -eq 1 ]; then
 	echo Enabling I2C
@@ -16,7 +18,7 @@ sudo apt update -y \
 echo
 
 echo ++    Loading scripts...
-git clone https://github.com/KneeNinetySeven/Raspi-Status-Display.git
+git clone https://github.com/${REPOSITORY}/Raspi-Status-Display.git
 mv Raspi-Status-Display status-display
 cd status-display
 echo
