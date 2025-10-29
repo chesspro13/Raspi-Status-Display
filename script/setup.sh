@@ -22,8 +22,8 @@ echo ++    Loading scripts...
 git clone https://github.com/${REPOSITORY}/Raspi-Status-Display.git
 mv Raspi-Status-Display status-display
 cd status-display
+git pull https://github.com/${REPOSITORY}/Raspi-Status-Display.git ${BRANCH}
 git checkout -b ${BRANCH}
-git pull
 echo
 
 echo ++    Searching for I2C devices...
