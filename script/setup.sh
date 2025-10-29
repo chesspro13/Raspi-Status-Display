@@ -36,6 +36,7 @@ chmod +x script/setup.sh
 chmod +x script/update.sh
 sudo ln -s $(pwd)/display.service /etc/systemd/system/
 sudo systemctl daemon-reload && sudo systemctl enable display && sudo systemctl start display
+mkdir -p logs
 touch logs/status-display.log
 echo
 
