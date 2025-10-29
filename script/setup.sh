@@ -1,6 +1,7 @@
 #!/bin/bash
 
 REPOSITORY="chesspro13"
+BRANCH="requirements"
 
 echo ++    I2C Checks
 if [ $(sudo raspi-config nonint get_i2c) -eq 1 ]; then
@@ -21,6 +22,7 @@ echo ++    Loading scripts...
 git clone https://github.com/${REPOSITORY}/Raspi-Status-Display.git
 mv Raspi-Status-Display status-display
 cd status-display
+git checkout -b ${BRANCH}
 echo
 
 echo ++    Searching for I2C devices...
