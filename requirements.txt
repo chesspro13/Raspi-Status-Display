@@ -5,3 +5,4 @@ adafruit-blinka==8.66.2
 psutil==7.1.2
 python-dateutil==2.9.0.post0
 qrcode[pil]==8.2
+RPi.GPIO==0.7.1
