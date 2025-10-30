@@ -64,7 +64,7 @@ def run(config : ConfigParser):
         )
     
     loadingScreen = LoadingScreen(WIDTH, HEIGHT)
-    for _ in range(100):
+    for _ in range(10):
         img = loadingScreen.cycleLoading()
         if not IS_MOCKED:
             OLED.image(img)
