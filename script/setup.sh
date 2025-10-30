@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOSITORY="chesspro13"
-BRANCH="requirements"
+BRANCH=${1:"main"}
 
 echo ++    I2C Checks
 if [ $(sudo raspi-config nonint get_i2c) -eq 1 ]; then
