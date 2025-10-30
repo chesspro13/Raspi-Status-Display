@@ -79,7 +79,7 @@ def run(config : ConfigParser):
     pageIndex = 0
     try:
         image = Image.new("1", (WIDTH, HEIGHT))
-        while running:
+        while True:
             if config["display"].getboolean('auto_off_enabled') and in_between(
                 datetime.now(),
                 parser.parse(config["display"]["auto_off"]),
@@ -127,7 +127,7 @@ def run(config : ConfigParser):
         currentPage.finished = True
         running = False
         sendToSleep()
-
+    echo("FLUMPY")
 
 def get_current_time_millis():
     return round(time() * 1000)
@@ -165,7 +165,7 @@ def drawFooter(
     draw.text(
         (
             0 + footerTextOffsetLeft,
-            image.height - draw.textsize(page.getName())[1] - footerTextOffsetLeft,
+            image.height - draw.textlength(page.getName()) - footerTextOffsetLeft,
         ),
         page.getName(),
         "white",

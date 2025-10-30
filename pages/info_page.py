@@ -14,7 +14,7 @@ class InfoPage(Page):
         draw = ImageDraw.Draw(newImage)
         hostname = socket.gethostname()
         ip_address = net_util.get_ip_address()
-        draw.text((draw.textsize(hostname, font=self.font_xl)[0]/2, 3), text=hostname, fill='white', font=self.font_xl)
+        draw.text((draw.textlength(hostname, font=self.font_xl)/2, 3), text=hostname, fill='white', font=self.font_xl)
         draw.text((0, 22), text=ip_address, fill='white', font=self.font_l)
         return newImage
 

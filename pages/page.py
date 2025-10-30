@@ -31,9 +31,9 @@ class Page:
             text = '%s%%' % val
         else:
             text = valueLabel
-        textDraw.text((center[0]-(draw.textsize(text)[0] / 2), center[1] - 15),
+        textDraw.text((center[0]-(draw.textlength(text) / 2), center[1] - 15),
                       text, fill='white', font=self.font_l)
-        textDraw.text((center[0]-(draw.textsize(name)[0] / 2), center[1]+5),
+        textDraw.text((center[0]-(draw.textlength(name) / 2), center[1]+5),
                       name, fill='white', font=self.font_s)
 
         self.img = ImageChops.logical_xor(self.img, textImg)
@@ -57,9 +57,9 @@ class Page:
         else:
             value = valueLabel
         center = ((bounds[1][0] - bounds[0][0]) / 2, (bounds[1][1] - bounds[0][1]) / 2)
-        textDraw.text((center[0]- (draw.textsize(value)[0] / 2), center[1] - (draw.textsize(value)[1] / 2)),
+        textDraw.text((center[0]- (draw.textlength(value) / 2), center[1] - (draw.textlength(value) / 2)),
                       value, fill='white', font=self.font_xl)
-        textDraw.text((center[0]- (draw.textsize(value)[0] / 2), bounds[1][1]),
+        textDraw.text((center[0]- (draw.textlength(value) / 2), bounds[1][1]),
                       name, fill='white', font=self.font_l)
 
         self.img = ImageChops.logical_xor(self.img, textImg)
