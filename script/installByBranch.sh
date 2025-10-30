@@ -16,7 +16,7 @@ SETUP_URL="https://raw.githubusercontent.com/chesspro13/Raspi-Status-Display/${B
 # Download the setup file
 echo "Downloading setup file from branch: ${BRANCH}"
 echo "${SETUP_URL}"
-curl -sSL "${SETUP_URL}" | bash
+curl -sSL "${SETUP_URL}" | bash -s ${BRANCH}
 
 # Check if the download was successful
 if [ $? -eq 0 ]; then
