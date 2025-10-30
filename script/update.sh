@@ -1,3 +1,4 @@
+#!/bin/bash
 systemctl is-active --quiet display
 serviceStatus=$?
 

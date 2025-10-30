@@ -1,5 +1,8 @@
 #!/bin/bash
 
+REPOSITORY="chesspro13"
+BRANCH="requirements"
+
 echo ++    I2C Checks
 if [ $(sudo raspi-config nonint get_i2c) -eq 1 ]; then
 	echo Enabling I2C
@@ -16,9 +19,11 @@ sudo apt update -y \
 echo
 
 echo ++    Loading scripts...
-git clone https://github.com/KneeNinetySeven/Raspi-Status-Display.git
+git clone https://github.com/${REPOSITORY}/Raspi-Status-Display.git
 mv Raspi-Status-Display status-display
 cd status-display
+git pull https://github.com/${REPOSITORY}/Raspi-Status-Display.git ${BRANCH}
+git checkout -b ${BRANCH}
 echo
 
 echo ++    Searching for I2C devices...
@@ -28,7 +33,7 @@ echo
 
 echo ++     Installing basic python dependencies
 sudo python3 -m venv .venv
-sudo -H .venv/bin/pip install -r requirements.txt
+sudo -H .venv/bin/pip3 install -r requirements.txt
 echo
 
 echo ++     Installing system services
