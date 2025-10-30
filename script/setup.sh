@@ -2,6 +2,7 @@
 
 REPOSITORY="chesspro13"
 BRANCH=${1:"main"}
+echo "Using branch ${BRANCH}"
 
 echo ++    I2C Checks
 if [ $(sudo raspi-config nonint get_i2c) -eq 1 ]; then
