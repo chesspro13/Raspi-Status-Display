@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOSITORY="chesspro13"
-BRANCH=${1:"main"}
+BRANCH=${1:-main}
 echo "Using branch ${BRANCH}"
 
 echo ++    I2C Checks
