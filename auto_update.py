@@ -36,7 +36,8 @@ class AutoUpdater:
             
 
     def _is_update_available(self) -> bool:
-        return not os.system("git diff-index --quiet HEAD") == 0
+#       return not os.system("git diff-index --quiet HEAD") == 0
+        return False # Hard coded for development
 
     def _start_update_script(self) -> None:
         self._logger.info("Available update detected. Initiating...")
